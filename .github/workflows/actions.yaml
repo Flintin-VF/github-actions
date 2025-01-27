@@ -1,29 +1,17 @@
-name: CI/CD Pipeline
+name: Test Workflow
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      - name: Run Maven build
-        run: mvn clean install
-
-      - name: Echo Done
-        run: echo "Build completed successfully!"
+      - name: Echo a message
+        run: echo "Hello, GitHub Actions!"
