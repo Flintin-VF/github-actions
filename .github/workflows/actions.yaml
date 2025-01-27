@@ -8,14 +8,10 @@ on:
     branches:
       - main
 
-# Define variables at the workflow level
-env:
-  WORKFLOW_ENV_VAR: "This is a workflow-level environment variable"
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    environment: demo
     # Define variables at the job level
     env:
       JOB_ENV_VAR: "This is a job-level environment variable"
